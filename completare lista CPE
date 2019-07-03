@@ -1,0 +1,118 @@
+CPE - https://nvd.nist.gov/products/cpe 
+
+CPE initial: cpe:2.3:a:adiscon:loganalyzer:3.6.6:*:*:*:*:*:*:*|cpe:/a:adiscon:loganalyzer:3.6.6 
+CPE final: cpe:2.3:a:adiscon:loganalyzer:3.6.6:*:*:*:*:*:*:*|cpe:/a:adiscon:loganalyzer:3.6.6|http://download.adiscon.com/loganalyzer/loganalyzer-3.6.6.tar.gz|Commercial,GPL-3.0-or-later 
+
+Fiecare CPE este format din: 
+
+1. CPE ver. 2.3 : cpe:2.3:a:adiscon:loganalyzer:3.6.6:*:*:*:*:*:*:* , unde 
+	- adiscon este supplier 
+	- loganalyzer este softul(componenta) 
+	- 3.6.6 este versiunea
+2. CPE ver. 2.2 : cpe:/a:adiscon:loganalyzer:3.6.6 - aceasta este versiunea veche pe care nu o vom folosi 
+
+3. Link download : http://download.adiscon.com/loganalyzer/loganalyzer-3.6.6.tar.gz . Linkul de download trebuie sa fie de pe: 
+	1. Pagina oficiala a softului 
+	2. Github 
+	3. Sourceforge
+	4. Drupal 
+	5. si altele , dar nu pe site-uri obscure
+    Daca exista link de download cu multe extensii se vor adauga si ele:
+	Exemplu : 		 
+	cpe:2.3:a:adiscon:loganalyzer:3.6.6:*:*:*:*:*:*:*|cpe:/a:adiscon:loganalyzer:3.6.6|http://download.adiscon.com/loganalyzer/loganalyzer-3.6.6.tar.gz|Commercial,GPL-3.0-or-later
+	cpe:2.3:a:adiscon:loganalyzer:3.6.6:*:*:*:*:*:*:*|cpe:/a:adiscon:loganalyzer:3.6.6|http://download.adiscon.com/loganalyzer/loganalyzer-3.6.6.zip|Commercial,GPL-3.0-or-later
+	cpe:2.3:a:adiscon:loganalyzer:3.6.6:*:*:*:*:*:*:*|cpe:/a:adiscon:loganalyzer:3.6.6|http://download.adiscon.com/loganalyzer/loganalyzer-3.6.6.exe|Commercial,GPL-3.0-or-later
+	cpe:2.3:a:adiscon:loganalyzer:3.6.6:*:*:*:*:*:*:*|cpe:/a:adiscon:loganalyzer:3.6.6|http://download.adiscon.com/loganalyzer/loganalyzer-3.6.6.msi|Commercial,GPL-3.0-or-later
+	cpe:2.3:a:adiscon:loganalyzer:3.6.6:*:*:*:*:*:*:*|cpe:/a:adiscon:loganalyzer:3.6.6|http://download.adiscon.com/loganalyzer/loganalyzer-3.6.6.jar|Commercial,GPL-3.0-or-later
+    Daca nu exista link de download pentru componenta se marcheaza : NOURL	
+	Exemplu : 
+	cpe:2.3:a:cisco:prime_collaboration_provisioning:11.5:*:*:*:*:*:*:*|cpe:/a:cisco:prime_collaboration_provisioning:11.5|NOURL
+ 
+4. Licenta SPDX : Commercial,GPL-3.0-or-later . Licenta o puteti cauta pe SPDX ( https://spdx.org/licenses/ ) daca nu stiti notarea exacta. Daca este multi-license se noteaza ca in exemplu cu ',' intre licente. Daca nu este pe SPDX o notam cu denumirea din header, iar daca nu are denumire punem numele softului. Mai sunt si licente : Commercial si Proprietary. 
+    Daca softul nu are licenta se marcheaza : NOLICENSE 
+	Exemplu: 
+	cpe:2.3:a:cisco:prime_collaboration_provisioning:11.2:*:*:*:*:*:*:*|cpe:/a:cisco:prime_collaboration_provisioning:11.2|NOURL|NOLICENSE
+	cpe:2.3:a:cisco:prime_collaboration_provisioning:11.5:*:*:*:*:*:*:*|cpe:/a:cisco:prime_collaboration_provisioning:11.5|NOURL|NOLICENSE	 
+
+5. Se vor completa datele astea pentru fiecare rand (cpe). Lista se poate completa si manual , dar e un chin (din proprie experienta). Asa ca mai jos un mic ajutor. Pentru asta ar fi bine sa aveti :
+- Linux sau o masina virutala cu Linux 
+- php (preferabil PHP 5.6.40-8+ubuntu18.04.1+deb.sury.org+1 (cli), e mai veche versiunea)
+- python  
+- Visual Code Studio (ca sa puteti modifica)
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Pentru a lua lista de linkuri de pe github : 
+	
+	php getGithubReleases.php https://github.com/memcached/memcached > FOLDER/UNDE/VRETI/SA/FIE/SALVATA/LISTA/git-memcached 
+unde :
+	- php numele libajului de programare
+	- getGithubReleases.php - numele scriptului 
+	- https://github.com/memcached/memcached linkul de github pe care il vreti  (daca il veti pune https://github.com/memcached/memcached/releases nu va merge)	
+	- > - asta inseamna ca rezultatul va fi introdus intr-un file 
+	- FOLDER/UNDE/VRETI/SA/FIE/SALVATA/LISTA/git-memcached - locatia si numele fisierului (eu folosesc sub forma git-numeSoft pentru ca e mai usor de getsionat numarul lor)
+
+Rezultatul rularii este in fisierul : git-memcached si este sub forma : 
+
+	https://github.com/memcached/memcached/archive/1.5.16.zip
+	https://github.com/memcached/memcached/archive/1.5.16.tar.gz
+	https://github.com/memcached/memcached/archive/1.5.15.zip
+	https://github.com/memcached/memcached/archive/1.5.15.tar.gz
+	https://github.com/memcached/memcached/archive/1.5.14.zip
+	https://github.com/memcached/memcached/archive/1.5.14.tar.gz
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+In timp ce ruleaza scriptul de mai sus sau dupa sau cand vreti voi, luam toate CPE-urile corespunzatoare componentei de pe github si le adaugan intr-un fisier nou (eu il denumesc CPE-memcached , tot pentru a le gestiona mai usor )  care va fi de forma : 
+	
+	cpe:2.3:a:memcached:memcached:1.4.17:*:*:*:*:*:*:*|cpe:/a:memcached:memcached:1.4.17|
+	cpe:2.3:a:memcached:memcached:1.4.18:*:*:*:*:*:*:*|cpe:/a:memcached:memcached:1.4.18|
+	cpe:2.3:a:memcached:memcached:1.4.19:*:*:*:*:*:*:*|cpe:/a:memcached:memcached:1.4.19|
+	cpe:2.3:a:memcached:memcached:1.4.20:*:*:*:*:*:*:*|cpe:/a:memcached:memcached:1.4.20|
+	cpe:2.3:a:memcached:memcached:1.4.21:*:*:*:*:*:*:*|cpe:/a:memcached:memcached:1.4.21|
+
+Dupa ce avem create aceste doua fisiere : git-memcached si CPE-memcached folosim urmatorul script : 
+
+	php match.php CPE-memcached git-memcached BSD-3-Clause > REZ
+unde :
+	- php - numele limbajului de programare 
+	- match.php - numele scriptului
+	- CPE-memcached - fisierul care contine CPE-urile 
+	- git-memcached - fisierul care contine linkurile luate de pe github 
+	- BSD-3-Clause - licenta in format SPDX (https://spdx.org/licenses/) 
+	- > - asta inseamna ca rezultatul va fi introdus intr-un file 
+	- REZ - locatia si numele fisierului unde vor fi puse rezultatele 
+
+Se poate rula si : 
+
+	php match.php CPE-memcached git-memcached BSD-3-Clause
+
+unde rezultatele vor fi afisate in terminal
+
+Rezultatul (in cel mai bun caz) va fi de forma : 
+
+	cpe:2.3:a:memcached:memcached:1.4.17:*:*:*:*:*:*:*|cpe:/a:memcached:memcached:1.4.17|https://github.com/memcached/memcached/archive/1.4.17.zip|BSD-3-Clause
+	cpe:2.3:a:memcached:memcached:1.4.17:*:*:*:*:*:*:*|cpe:/a:memcached:memcached:1.4.17|https://github.com/memcached/memcached/archive/1.4.17.tar.gz|BSD-3-Clause
+	cpe:2.3:a:memcached:memcached:1.4.18:*:*:*:*:*:*:*|cpe:/a:memcached:memcached:1.4.18|https://github.com/memcached/memcached/archive/1.4.18.zip|BSD-3-Clause
+	cpe:2.3:a:memcached:memcached:1.4.18:*:*:*:*:*:*:*|cpe:/a:memcached:memcached:1.4.18|https://github.com/memcached/memcached/archive/1.4.18.tar.gz|BSD-3-Clause
+	cpe:2.3:a:memcached:memcached:1.4.19:*:*:*:*:*:*:*|cpe:/a:memcached:memcached:1.4.19|https://github.com/memcached/memcached/archive/1.4.19.zip|BSD-3-Clause
+	cpe:2.3:a:memcached:memcached:1.4.19:*:*:*:*:*:*:*|cpe:/a:memcached:memcached:1.4.19|https://github.com/memcached/memcached/archive/1.4.19.tar.gz|BSD-3-Clause
+
+Acestea este forma finala si se poate adauga in lista de CPEuri.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
